@@ -1,0 +1,1614 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_dashboard" name="shell-type" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              error: "#ba1a1a",
+              "surface-dim": "#d2d9f4",
+              "inverse-on-surface": "#eef0ff",
+              tertiary: "#006056",
+              "on-secondary-fixed": "#001453",
+              "primary-fixed-dim": "#b4c5ff",
+              "on-tertiary-container": "#b1fff1",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#dae2fd",
+              "error-container": "#ffdad6",
+              "on-error-container": "#93000a",
+              "inverse-surface": "#283044",
+              "on-tertiary": "#ffffff",
+              "primary-fixed": "#dbe1ff",
+              background: "#faf8ff",
+              secondary: "#3755c3",
+              "surface-tint": "#0053db",
+              "surface-container-highest": "#dae2fd",
+              "surface-bright": "#faf8ff",
+              "tertiary-fixed": "#71f8e4",
+              "tertiary-container": "#007b6e",
+              "inverse-primary": "#b4c5ff",
+              "tertiary-fixed-dim": "#4fdbc8",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "outline-variant": "#c3c6d7",
+              "on-tertiary-fixed": "#00201c",
+              "on-surface-variant": "#434655",
+              "surface-container-high": "#e2e7ff",
+              "surface-container-low": "#f2f3ff",
+              "on-secondary-fixed-variant": "#173bab",
+              "secondary-container": "#708cfd",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed-variant": "#005048",
+              "on-primary-fixed": "#00174b",
+              surface: "#faf8ff",
+              outline: "#737686",
+              "on-background": "#131b2e",
+              "primary-container": "#2563eb",
+              "on-surface": "#131b2e",
+              "secondary-fixed": "#dde1ff",
+              "secondary-fixed-dim": "#b8c4ff",
+              primary: "#004ac6",
+              "on-primary-container": "#eeefff",
+              "on-primary-fixed-variant": "#003ea8",
+              "on-secondary-container": "#00217a",
+              "surface-container": "#eaedff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "margin-md": "2rem",
+              "space-sm": "0.5rem",
+              "margin-lg": "3rem",
+              "space-xl": "2.5rem",
+              margin: "1rem",
+              "space-xs": "0.25rem",
+              "gutter-lg": "2rem",
+              "gutter-md": "1.5rem",
+              "space-lg": "1.5rem",
+              gutter: "1rem",
+              "space-md": "1rem",
+            },
+            fontFamily: {
+              "body-md": ["Inter"],
+              "headline-lg": ["Plus Jakarta Sans"],
+              "label-sm": ["Plus Jakarta Sans"],
+              "headline-sm": ["Plus Jakarta Sans"],
+              "label-lg": ["Plus Jakarta Sans"],
+              "body-lg": ["Inter"],
+              "body-sm": ["Inter"],
+              "display-hero-mobile": ["Plus Jakarta Sans"],
+              "label-md": ["Plus Jakarta Sans"],
+              "headline-lg-mobile": ["Plus Jakarta Sans"],
+              "headline-md": ["Plus Jakarta Sans"],
+              "headline-xl-mobile": ["Plus Jakarta Sans"],
+              "display-hero": ["Plus Jakarta Sans"],
+              "headline-xl": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-lg": [
+                "28px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-sm": [
+                "16px",
+                { lineHeight: "24px", fontWeight: "600" },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "display-hero-mobile": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg-mobile": [
+                "22px",
+                {
+                  lineHeight: "30px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": [
+                "20px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "headline-xl-mobile": [
+                "28px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-hero": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-xl": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "700",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background font-body-md text-on-surface min-h-screen">
+    <aside
+      class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+    >
+      <div class="flex flex-col">
+        <div class="h-16 px-space-md flex items-center justify-between">
+          <div class="flex items-center gap-space-xs">
+            <div
+              class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary"
+            >
+              <span class="material-symbols-outlined text-[20px]">school</span>
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none"
+                >LifeSkills Hub</span
+              ><span
+                class="font-label-sm text-label-sm text-tertiary font-bold tracking-widest uppercase mt-space-xs"
+                >Nigeria</span
+              >
+            </div>
+          </div>
+          <span
+            class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant px-space-xs py-0.5 rounded-full"
+            >v1.2</span
+          >
+        </div>
+        <nav
+          class="flex flex-col gap-1 px-space-sm pt-space-sm"
+          data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg shadow-sm"
+        >
+          <a
+            class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="dashboard"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">dashboard</span
+            ><span class="font-label-lg text-label-lg">Dashboard</span></a
+          ><a
+            class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="learning-path"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">route</span
+            ><span class="font-label-lg text-label-lg">Learning Path</span></a
+          ><a
+            class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="explore-skills"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">explore</span
+            ><span class="font-label-lg text-label-lg">Explore Skills</span></a
+          ><a
+            class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="challenges"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">flag</span
+            ><span class="font-label-lg text-label-lg">Challenges</span></a
+          ><a
+            aria-current="page"
+            class="flex items-center gap-space-sm px-space-md py-2.5 transition-all bg-primary-container text-on-primary font-bold rounded-lg shadow-sm"
+            data-path="my-progress"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]"
+              >monitoring</span
+            ><span class="font-label-lg text-label-lg">My Progress</span></a
+          ><a
+            class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="achievements"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]"
+              >military_tech</span
+            ><span class="font-label-lg text-label-lg">Achievements</span></a
+          ><a
+            class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="settings"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">settings</span
+            ><span class="font-label-lg text-label-lg">Settings</span></a
+          >
+        </nav>
+      </div>
+      <div class="p-space-sm flex flex-col gap-space-xs">
+        <div
+          class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-xs"
+        >
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-primary text-[20px]"
+              >help_center</span
+            ><span class="font-label-md text-label-md text-on-surface"
+              >Need Help?</span
+            >
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Get prompt support from local academic mentors.
+          </p>
+          <a
+            class="font-label-sm text-label-sm text-primary hover:text-on-primary-fixed-variant transition-colors mt-space-xs inline-flex items-center gap-1"
+            href="#"
+            >Contact Support
+            <span class="material-symbols-outlined text-[14px]"
+              >arrow_forward</span
+            ></a
+          >
+        </div>
+        <a
+          class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-all"
+          href="#"
+          ><span class="material-symbols-outlined text-[20px]">logout</span
+          ><span class="font-label-lg text-label-lg">Log Out</span></a
+        >
+      </div>
+    </aside>
+    <div class="pl-64 flex flex-col min-h-screen">
+      <header
+        class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+      >
+        <div
+          class="w-full h-full px-gutter-lg flex items-center justify-between gap-space-md"
+        >
+          <div class="flex items-center gap-space-sm">
+            <nav aria-label="Breadcrumb" class="flex items-center gap-space-xs">
+              <a
+                class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                href="#"
+                >Dashboard</a
+              ><span class="material-symbols-outlined text-outline text-[16px]"
+                >chevron_right</span
+              ><span class="font-label-md text-label-md text-on-surface"
+                >My Progress</span
+              >
+            </nav>
+          </div>
+          <div
+            class="flex items-center gap-space-md flex-1 max-w-md mx-space-lg"
+          >
+            <div class="relative w-full">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]"
+                >search</span
+              ><input
+                class="w-full h-10 pl-9 pr-space-md bg-surface-container-low rounded-lg text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container transition-all"
+                placeholder="Search lessons, skills, progress..."
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="flex items-center gap-space-sm">
+            <button
+              aria-label="Notifications"
+              class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            >
+              <span class="material-symbols-outlined text-[22px]"
+                >notifications</span
+              ><span
+                class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"
+              ></span>
+            </button>
+            <div
+              class="flex items-center gap-space-xs p-1.5 pl-2.5 bg-surface-container-low rounded-full hover:bg-surface-container transition-colors cursor-pointer"
+            >
+              <div class="flex flex-col text-right">
+                <span
+                  class="font-label-sm text-label-sm text-on-surface leading-tight"
+                  >Alex Johnson</span
+                ><span
+                  class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-tight"
+                  >SSS Student</span
+                >
+              </div>
+              <div
+                class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-on-primary text-[18px]"
+                  >person</span
+                >
+              </div>
+              <span
+                class="material-symbols-outlined text-outline text-[18px] pr-1"
+                >keyboard_arrow_down</span
+              >
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="flex-1 w-full pt-16 px-gutter-lg py-space-xl bg-background">
+        <div class="flex flex-col w-full">
+          <!-- Top Bar / Breadcrumb Context & Filter Header -->
+          <section class="flex flex-col gap-space-lg mb-space-xl">
+            <div
+              class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg"
+            >
+              <div class="flex flex-col gap-space-xs max-w-2xl">
+                <div
+                  class="inline-flex items-center gap-space-xs w-fit px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm tracking-wider uppercase"
+                >
+                  <span
+                    class="w-2 h-2 rounded-full bg-primary animate-pulse"
+                  ></span>
+                  Track Your Journey • Learn It. Practise It. Live It.
+                </div>
+                <h1
+                  class="font-headline-xl text-headline-xl text-on-surface tracking-tight"
+                >
+                  My Learning Progress
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant">
+                  See how far you’ve come, reflect on practical applications,
+                  and see what high-impact skills to unlock next.
+                </p>
+              </div>
+              <!-- Controls & Student Pathway Badge -->
+              <div
+                class="flex flex-col sm:flex-row sm:items-center gap-space-md"
+              >
+                <!-- Interactive Date Filter Pills -->
+                <div
+                  class="flex items-center p-1 bg-surface-container rounded-xl self-start sm:self-auto shadow-sm"
+                  id="timeFilterGroup"
+                >
+                  <button
+                    class="time-filter-btn px-4 py-2 rounded-lg font-label-md text-label-md transition-all duration-200 bg-surface-container-lowest text-primary font-bold shadow-sm"
+                    data-period="week"
+                    type="button"
+                  >
+                    This Week
+                  </button>
+                  <button
+                    class="time-filter-btn px-4 py-2 rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:text-on-surface font-semibold"
+                    data-period="month"
+                    type="button"
+                  >
+                    This Month
+                  </button>
+                  <button
+                    class="time-filter-btn px-4 py-2 rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:text-on-surface font-semibold"
+                    data-period="all"
+                    type="button"
+                  >
+                    All Time
+                  </button>
+                </div>
+                <!-- Student Pathway Pill -->
+                <div
+                  class="flex items-center gap-space-xs px-3.5 py-2 rounded-xl bg-surface-container-low text-on-surface"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary text-[20px]"
+                    >verified</span
+                  >
+                  <div class="flex flex-col">
+                    <span
+                      class="font-label-sm text-label-sm leading-none font-bold"
+                      >Alex Johnson</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant leading-none mt-1"
+                      >SSS Student Pathway</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- 4-Card Progress Summary Grid -->
+          <section
+            class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-xl"
+          >
+            <!-- Card 1: Overall Progress Ring -->
+            <div
+              class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow"
+            >
+              <div
+                class="absolute -right-6 -bottom-6 w-28 h-28 bg-primary/5 rounded-full blur-xl pointer-events-none"
+              ></div>
+              <div class="flex items-start justify-between gap-2 mb-space-sm">
+                <span
+                  class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                  >Overall Learning Progress</span
+                >
+                <span
+                  class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold"
+                  >Level 2 of 4</span
+                >
+              </div>
+              <div class="flex items-center gap-space-md my-space-xs">
+                <!-- SVG Radial Donut Chart -->
+                <div class="relative w-16 h-16 flex-shrink-0">
+                  <svg
+                    class="w-full h-full transform -rotate-90"
+                    viewbox="0 0 36 36"
+                  >
+                    <path
+                      class="text-surface-container"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3.5"
+                    ></path>
+                    <path
+                      class="text-primary transition-all duration-1000 ease-out"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-dasharray="68, 100"
+                      stroke-linecap="round"
+                      stroke-width="3.5"
+                    ></path>
+                  </svg>
+                  <div
+                    class="absolute inset-0 flex items-center justify-center"
+                  >
+                    <span
+                      class="font-headline-sm text-headline-sm text-on-surface font-extrabold"
+                      >68%</span
+                    >
+                  </div>
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-headline-lg text-headline-lg text-on-surface font-extrabold leading-none"
+                    >68%</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-tertiary font-semibold mt-1 flex items-center gap-1"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >trending_up</span
+                    >
+                    On Track
+                  </span>
+                </div>
+              </div>
+              <p
+                class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs"
+              >
+                Keep going — you’re making real practical progress!
+              </p>
+            </div>
+            <!-- Card 2: Lessons Completed -->
+            <div
+              class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center justify-between">
+                <span
+                  class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                  >Lessons Completed</span
+                >
+                <div
+                  class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-primary"
+                >
+                  <span class="material-symbols-outlined text-[22px]"
+                    >menu_book</span
+                  >
+                </div>
+              </div>
+              <div class="my-space-xs">
+                <span
+                  class="font-display-hero-mobile text-display-hero-mobile text-on-surface font-extrabold tracking-tight"
+                  >24</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-1.5 font-label-sm text-label-sm text-tertiary"
+              >
+                <span class="material-symbols-outlined text-[16px]"
+                  >add_circle</span
+                >
+                <span class="font-semibold">+4 completed this week</span>
+              </div>
+            </div>
+            <!-- Card 3: Practical Challenges Completed -->
+            <div
+              class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center justify-between">
+                <span
+                  class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                  >Practical Challenges</span
+                >
+                <div
+                  class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant"
+                >
+                  <span class="material-symbols-outlined text-[22px]"
+                    >flag_circle</span
+                  >
+                </div>
+              </div>
+              <div class="my-space-xs">
+                <span
+                  class="font-display-hero-mobile text-display-hero-mobile text-on-surface font-extrabold tracking-tight"
+                  >12</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant"
+              >
+                <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                <span>3 in Financial Literacy focus</span>
+              </div>
+            </div>
+            <!-- Card 4: Learning Streak -->
+            <div
+              class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center justify-between">
+                <span
+                  class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                  >Learning Streak</span
+                >
+                <div
+                  class="w-10 h-10 rounded-lg bg-error-container flex items-center justify-center text-error"
+                >
+                  <span
+                    class="material-symbols-outlined text-[22px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >local_fire_department</span
+                  >
+                </div>
+              </div>
+              <div class="my-space-xs">
+                <span
+                  class="font-display-hero-mobile text-display-hero-mobile text-on-surface font-extrabold tracking-tight"
+                  >5
+                  <span
+                    class="text-headline-md font-headline-md text-on-surface-variant font-medium"
+                    >days</span
+                  ></span
+                >
+              </div>
+              <div
+                class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant"
+              >
+                <span
+                  class="material-symbols-outlined text-[16px] text-tertiary"
+                  >bolt</span
+                >
+                <span class="font-semibold text-tertiary"
+                  >Keep your streak alive today</span
+                >
+              </div>
+            </div>
+          </section>
+          <!-- Two-Column Main Progression Grid -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start"
+          >
+            <!-- LEFT / PRIMARY COLUMN (7 Columns on Large Screens) -->
+            <div class="lg:col-span-7 flex flex-col gap-space-xl">
+              <!-- Section: Skill-by-Skill Progress -->
+              <section
+                class="bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-sm flex flex-col gap-space-lg"
+              >
+                <div
+                  class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs"
+                >
+                  <div class="flex flex-col">
+                    <h2
+                      class="font-headline-lg text-headline-lg text-on-surface font-bold"
+                    >
+                      Your Skill Development
+                    </h2>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Track your competence and mastery across core Nigerian
+                      secondary &amp; tertiary life pillars
+                    </p>
+                  </div>
+                  <span
+                    class="self-start sm:self-auto font-label-sm text-label-sm text-tertiary bg-on-tertiary-container/30 px-3 py-1 rounded-full font-bold"
+                    >5 Skills Active</span
+                  >
+                </div>
+                <!-- Skill Cards Stack -->
+                <div class="flex flex-col gap-space-md">
+                  <!-- Skill 1: Financial Literacy -->
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-sm group"
+                  >
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-space-sm">
+                        <div
+                          class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-xs"
+                        >
+                          <span class="material-symbols-outlined text-[22px]"
+                            >account_balance_wallet</span
+                          >
+                        </div>
+                        <div class="flex flex-col">
+                          <h3
+                            class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors"
+                          >
+                            Financial Literacy
+                          </h3>
+                          <span
+                            class="font-label-sm text-label-sm text-on-surface-variant font-medium"
+                            >Advanced Beginner • 6 of 8 modules completed</span
+                          >
+                        </div>
+                      </div>
+                      <span
+                        class="font-headline-sm text-headline-sm text-primary font-extrabold"
+                        >75%</span
+                      >
+                    </div>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Learn to budget, manage everyday Naira expenses, save
+                      purposefully, and make informed choices.
+                    </p>
+                    <!-- Progress Line with Teal Milestone Marker -->
+                    <div
+                      class="relative w-full h-2.5 bg-surface-container-high rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full bg-gradient-to-r from-primary to-primary-container rounded-full"
+                        style="width: 75%"
+                      ></div>
+                      <div
+                        class="absolute top-0 bottom-0 left-[75%] -ml-1 w-2 bg-tertiary rounded-full shadow-sm"
+                      ></div>
+                    </div>
+                  </div>
+                  <!-- Skill 2: Communication -->
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-sm group"
+                  >
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-space-sm">
+                        <div
+                          class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary shadow-xs"
+                        >
+                          <span class="material-symbols-outlined text-[22px]"
+                            >forum</span
+                          >
+                        </div>
+                        <div class="flex flex-col">
+                          <h3
+                            class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-secondary transition-colors"
+                          >
+                            Communication
+                          </h3>
+                          <span
+                            class="font-label-sm text-label-sm text-on-surface-variant font-medium"
+                            >Intermediate • 5 of 8 modules completed</span
+                          >
+                        </div>
+                      </div>
+                      <span
+                        class="font-headline-sm text-headline-sm text-secondary font-extrabold"
+                        >60%</span
+                      >
+                    </div>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Express your ideas clearly, master active listening, and
+                      resolve peer disagreements assertively.
+                    </p>
+                    <div
+                      class="relative w-full h-2.5 bg-surface-container-high rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full bg-secondary rounded-full"
+                        style="width: 60%"
+                      ></div>
+                    </div>
+                  </div>
+                  <!-- Skill 3: Leadership & Teamwork -->
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-sm group"
+                  >
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-space-sm">
+                        <div
+                          class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-tertiary shadow-xs"
+                        >
+                          <span class="material-symbols-outlined text-[22px]"
+                            >groups</span
+                          >
+                        </div>
+                        <div class="flex flex-col">
+                          <h3
+                            class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-tertiary transition-colors"
+                          >
+                            Leadership &amp; Teamwork
+                          </h3>
+                          <span
+                            class="font-label-sm text-label-sm text-on-surface-variant font-medium"
+                            >Proficient • 5 of 7 modules completed</span
+                          >
+                        </div>
+                      </div>
+                      <span
+                        class="font-headline-sm text-headline-sm text-tertiary font-extrabold"
+                        >70%</span
+                      >
+                    </div>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Collaborate constructively with others, delegate duties,
+                      and take civic and team accountability.
+                    </p>
+                    <div
+                      class="relative w-full h-2.5 bg-surface-container-high rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full bg-tertiary rounded-full"
+                        style="width: 70%"
+                      ></div>
+                    </div>
+                  </div>
+                  <!-- Skill 4: Critical Thinking -->
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-sm group"
+                  >
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-space-sm">
+                        <div
+                          class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-xs"
+                        >
+                          <span class="material-symbols-outlined text-[22px]"
+                            >psychology</span
+                          >
+                        </div>
+                        <div class="flex flex-col">
+                          <h3
+                            class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors"
+                          >
+                            Critical Thinking
+                          </h3>
+                          <span
+                            class="font-label-sm text-label-sm text-on-surface-variant font-medium"
+                            >Intermediate • 4 of 7 modules completed</span
+                          >
+                        </div>
+                      </div>
+                      <span
+                        class="font-headline-sm text-headline-sm text-primary font-extrabold"
+                        >55%</span
+                      >
+                    </div>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Evaluate media information objectively, avoid logical
+                      fallacies, and make structured decisions.
+                    </p>
+                    <div
+                      class="relative w-full h-2.5 bg-surface-container-high rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full bg-primary-container rounded-full"
+                        style="width: 55%"
+                      ></div>
+                    </div>
+                  </div>
+                  <!-- Skill 5: Public Speaking -->
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-sm group"
+                  >
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-space-sm">
+                        <div
+                          class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary shadow-xs"
+                        >
+                          <span class="material-symbols-outlined text-[22px]"
+                            >record_voice_over</span
+                          >
+                        </div>
+                        <div class="flex flex-col">
+                          <h3
+                            class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-secondary transition-colors"
+                          >
+                            Public Speaking
+                          </h3>
+                          <span
+                            class="font-label-sm text-label-sm text-on-surface-variant font-medium"
+                            >Developing • 3 of 6 modules completed</span
+                          >
+                        </div>
+                      </div>
+                      <span
+                        class="font-headline-sm text-headline-sm text-secondary font-extrabold"
+                        >45%</span
+                      >
+                    </div>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Build stage poise, conquer public speaking anxiety, and
+                      pitch project presentations convincingly.
+                    </p>
+                    <div
+                      class="relative w-full h-2.5 bg-surface-container-high rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full bg-secondary-container rounded-full"
+                        style="width: 45%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- Section: Learning Activity Weekly Chart -->
+              <section
+                class="bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-sm flex flex-col gap-space-lg"
+              >
+                <div
+                  class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm"
+                >
+                  <div class="flex flex-col">
+                    <h2
+                      class="font-headline-lg text-headline-lg text-on-surface font-bold"
+                    >
+                      Weekly Activity Overview
+                    </h2>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Visualizing lessons and practical challenges completed
+                      Monday through Sunday
+                    </p>
+                  </div>
+                  <!-- Legend -->
+                  <div
+                    class="flex items-center gap-space-md font-label-sm text-label-sm"
+                  >
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-3 h-3 rounded bg-primary-container"></span>
+                      <span class="text-on-surface-variant">Core Lessons</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <span
+                        class="w-3 h-3 rounded bg-tertiary-fixed-dim"
+                      ></span>
+                      <span class="text-on-surface-variant"
+                        >Practical Challenges</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- Weekly Summary Bar Stats Banner -->
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-low flex flex-wrap items-center justify-between gap-space-md"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-xs"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >insights</span
+                      >
+                    </div>
+                    <div class="flex flex-col">
+                      <span
+                        class="font-label-md text-label-md text-on-surface font-bold"
+                        >24 Total Completed Activities</span
+                      >
+                      <span
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                        >3.4 hrs estimated active practice</span
+                      >
+                    </div>
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-bold px-3 py-1 rounded-full"
+                  >
+                    Top Study Day: Friday (6 Activities)
+                  </span>
+                </div>
+                <!-- Accessible Semantic Bar Chart Visualizer -->
+                <div class="w-full pt-space-lg pb-space-xs">
+                  <div
+                    class="grid grid-cols-7 gap-2 sm:gap-4 items-end h-56 w-full px-2"
+                  >
+                    <!-- Mon: 3 (2 lessons, 1 challenge) -->
+                    <div
+                      class="flex flex-col items-center gap-2 h-full justify-end group"
+                    >
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-on-surface-variant group-hover:text-primary transition-colors"
+                        >3</span
+                      >
+                      <div
+                        class="w-full max-w-[36px] flex flex-col-reverse rounded-t-lg overflow-hidden bg-surface-container h-[50%] transition-transform duration-200 group-hover:scale-y-105 origin-bottom"
+                      >
+                        <div
+                          class="w-full h-2/3 bg-primary-container"
+                          title="2 Lessons"
+                        ></div>
+                        <div
+                          class="w-full h-1/3 bg-tertiary-fixed-dim"
+                          title="1 Challenge"
+                        ></div>
+                      </div>
+                      <span
+                        class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                        >Mon</span
+                      >
+                    </div>
+                    <!-- Tue: 5 (3 lessons, 2 challenges) -->
+                    <div
+                      class="flex flex-col items-center gap-2 h-full justify-end group"
+                    >
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-on-surface-variant group-hover:text-primary transition-colors"
+                        >5</span
+                      >
+                      <div
+                        class="w-full max-w-[36px] flex flex-col-reverse rounded-t-lg overflow-hidden bg-surface-container h-[78%] transition-transform duration-200 group-hover:scale-y-105 origin-bottom"
+                      >
+                        <div
+                          class="w-full h-3/5 bg-primary-container"
+                          title="3 Lessons"
+                        ></div>
+                        <div
+                          class="w-full h-2/5 bg-tertiary-fixed-dim"
+                          title="2 Challenges"
+                        ></div>
+                      </div>
+                      <span
+                        class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                        >Tue</span
+                      >
+                    </div>
+                    <!-- Wed: 2 (1 lesson, 1 challenge) -->
+                    <div
+                      class="flex flex-col items-center gap-2 h-full justify-end group"
+                    >
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-on-surface-variant group-hover:text-primary transition-colors"
+                        >2</span
+                      >
+                      <div
+                        class="w-full max-w-[36px] flex flex-col-reverse rounded-t-lg overflow-hidden bg-surface-container h-[35%] transition-transform duration-200 group-hover:scale-y-105 origin-bottom"
+                      >
+                        <div
+                          class="w-full h-1/2 bg-primary-container"
+                          title="1 Lesson"
+                        ></div>
+                        <div
+                          class="w-full h-1/2 bg-tertiary-fixed-dim"
+                          title="1 Challenge"
+                        ></div>
+                      </div>
+                      <span
+                        class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                        >Wed</span
+                      >
+                    </div>
+                    <!-- Thu: 4 (3 lessons, 1 challenge) -->
+                    <div
+                      class="flex flex-col items-center gap-2 h-full justify-end group"
+                    >
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-on-surface-variant group-hover:text-primary transition-colors"
+                        >4</span
+                      >
+                      <div
+                        class="w-full max-w-[36px] flex flex-col-reverse rounded-t-lg overflow-hidden bg-surface-container h-[64%] transition-transform duration-200 group-hover:scale-y-105 origin-bottom"
+                      >
+                        <div
+                          class="w-full h-3/4 bg-primary-container"
+                          title="3 Lessons"
+                        ></div>
+                        <div
+                          class="w-full h-1/4 bg-tertiary-fixed-dim"
+                          title="1 Challenge"
+                        ></div>
+                      </div>
+                      <span
+                        class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                        >Thu</span
+                      >
+                    </div>
+                    <!-- Fri: 6 (Peak: 4 lessons, 2 challenges) -->
+                    <div
+                      class="flex flex-col items-center gap-2 h-full justify-end group"
+                    >
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-primary group-hover:scale-110 transition-transform"
+                        >6 ★</span
+                      >
+                      <div
+                        class="w-full max-w-[36px] flex flex-col-reverse rounded-t-lg overflow-hidden bg-surface-container h-[95%] ring-2 ring-primary/20 transition-transform duration-200 group-hover:scale-y-105 origin-bottom"
+                      >
+                        <div
+                          class="w-full h-2/3 bg-primary"
+                          title="4 Lessons"
+                        ></div>
+                        <div
+                          class="w-full h-1/3 bg-tertiary"
+                          title="2 Challenges"
+                        ></div>
+                      </div>
+                      <span
+                        class="font-label-md text-label-md text-primary font-bold"
+                        >Fri</span
+                      >
+                    </div>
+                    <!-- Sat: 1 (1 challenge) -->
+                    <div
+                      class="flex flex-col items-center gap-2 h-full justify-end group"
+                    >
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-on-surface-variant group-hover:text-primary transition-colors"
+                        >1</span
+                      >
+                      <div
+                        class="w-full max-w-[36px] flex flex-col-reverse rounded-t-lg overflow-hidden bg-surface-container h-[20%] transition-transform duration-200 group-hover:scale-y-105 origin-bottom"
+                      >
+                        <div
+                          class="w-full h-full bg-tertiary-fixed-dim"
+                          title="1 Challenge"
+                        ></div>
+                      </div>
+                      <span
+                        class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                        >Sat</span
+                      >
+                    </div>
+                    <!-- Sun: 3 (2 lessons, 1 challenge) -->
+                    <div
+                      class="flex flex-col items-center gap-2 h-full justify-end group"
+                    >
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-on-surface-variant group-hover:text-primary transition-colors"
+                        >3</span
+                      >
+                      <div
+                        class="w-full max-w-[36px] flex flex-col-reverse rounded-t-lg overflow-hidden bg-surface-container h-[50%] transition-transform duration-200 group-hover:scale-y-105 origin-bottom"
+                      >
+                        <div
+                          class="w-full h-2/3 bg-primary-container"
+                          title="2 Lessons"
+                        ></div>
+                        <div
+                          class="w-full h-1/3 bg-tertiary-fixed-dim"
+                          title="1 Challenge"
+                        ></div>
+                      </div>
+                      <span
+                        class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                        >Sun</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <!-- RIGHT / SECONDARY COLUMN (5 Columns on Large Screens) -->
+            <div class="lg:col-span-5 flex flex-col gap-space-xl">
+              <!-- Highlight Card: "Keep Your Momentum Going" -->
+              <section
+                class="rounded-xl p-space-lg bg-surface-container-high relative overflow-hidden shadow-sm flex flex-col gap-space-md"
+              >
+                <div
+                  class="flex items-center gap-space-xs text-primary font-bold"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >rocket_launch</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm uppercase tracking-wider"
+                    >Recommended Next Step</span
+                  >
+                </div>
+                <div class="flex flex-col gap-space-xs">
+                  <h3
+                    class="font-headline-md text-headline-md text-on-surface font-bold leading-snug"
+                  >
+                    Keep Your Momentum Going
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    You’re building valuable habits. Complete your next assigned
+                    lesson to unlock your next milestone certificate.
+                  </p>
+                </div>
+                <!-- Next Lesson Preview Inset Card -->
+                <div
+                  class="p-space-md rounded-lg bg-surface-container-lowest flex items-center gap-space-sm shadow-xs"
+                >
+                  <div
+                    class="w-10 h-10 rounded-lg bg-primary-container flex-shrink-0 flex items-center justify-center text-on-primary"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >play_arrow</span
+                    >
+                  </div>
+                  <div class="flex flex-col min-w-0">
+                    <span
+                      class="font-label-sm text-label-sm text-primary font-bold uppercase truncate"
+                      >Up Next • Financial Literacy</span
+                    >
+                    <span
+                      class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate"
+                      >Building Your First Budget</span
+                    >
+                  </div>
+                </div>
+                <!-- Action CTAs -->
+                <div
+                  class="flex flex-col sm:flex-row items-center gap-space-sm pt-space-xs"
+                >
+                  <a
+                    class="w-full sm:w-auto text-center px-6 py-2.5 rounded-lg bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-lg text-label-lg font-bold shadow-sm transition-colors"
+                    href="#"
+                  >
+                    Continue Learning
+                  </a>
+                  <a
+                    class="w-full sm:w-auto text-center px-4 py-2.5 rounded-lg text-primary hover:bg-surface-container font-label-lg text-label-lg font-semibold transition-colors flex items-center justify-center gap-1"
+                    href="#"
+                  >
+                    Explore Challenges
+                    <span class="material-symbols-outlined text-[16px]"
+                      >arrow_forward</span
+                    >
+                  </a>
+                </div>
+              </section>
+              <!-- Section: Recent Activity Timeline -->
+              <section
+                class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="material-symbols-outlined text-primary text-[22px]"
+                      >history</span
+                    >
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface font-bold"
+                    >
+                      Recent Activity
+                    </h3>
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >Updated just now</span
+                  >
+                </div>
+                <!-- Activity Feed List -->
+                <div class="flex flex-col gap-space-sm">
+                  <!-- Item 1 -->
+                  <div
+                    class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-start gap-space-sm"
+                  >
+                    <div
+                      class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant flex-shrink-0 mt-0.5"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >check</span
+                      >
+                    </div>
+                    <div class="flex flex-col flex-1 min-w-0">
+                      <span
+                        class="font-label-md text-label-md text-on-surface font-semibold truncate"
+                        >Completed “Creating a Weekly Budget”</span
+                      >
+                      <div class="flex items-center gap-space-xs mt-1">
+                        <span
+                          class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold"
+                          >Financial Literacy</span
+                        >
+                        <span
+                          class="font-label-sm text-label-sm text-on-surface-variant"
+                          >• Today, 10:30 AM</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Item 2 -->
+                  <div
+                    class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-start gap-space-sm"
+                  >
+                    <div
+                      class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant flex-shrink-0 mt-0.5"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >check</span
+                      >
+                    </div>
+                    <div class="flex flex-col flex-1 min-w-0">
+                      <span
+                        class="font-label-md text-label-md text-on-surface font-semibold truncate"
+                        >Completed “Communicating with Confidence”</span
+                      >
+                      <div class="flex items-center gap-space-xs mt-1">
+                        <span
+                          class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold"
+                          >Communication</span
+                        >
+                        <span
+                          class="font-label-sm text-label-sm text-on-surface-variant"
+                          >• Yesterday</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Item 3 -->
+                  <div
+                    class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-start gap-space-sm"
+                  >
+                    <div
+                      class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant flex-shrink-0 mt-0.5"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >check</span
+                      >
+                    </div>
+                    <div class="flex flex-col flex-1 min-w-0">
+                      <span
+                        class="font-label-md text-label-md text-on-surface font-semibold truncate"
+                        >Completed “Making Better Decisions”</span
+                      >
+                      <div class="flex items-center gap-space-xs mt-1">
+                        <span
+                          class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-bold"
+                          >Critical Thinking</span
+                        >
+                        <span
+                          class="font-label-sm text-label-sm text-on-surface-variant"
+                          >• 2 days ago</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Item 4 -->
+                  <div
+                    class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-start gap-space-sm"
+                  >
+                    <div
+                      class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant flex-shrink-0 mt-0.5"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >check</span
+                      >
+                    </div>
+                    <div class="flex flex-col flex-1 min-w-0">
+                      <span
+                        class="font-label-md text-label-md text-on-surface font-semibold truncate"
+                        >Completed “Working Effectively in a Team”</span
+                      >
+                      <div class="flex items-center gap-space-xs mt-1">
+                        <span
+                          class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold"
+                          >Leadership</span
+                        >
+                        <span
+                          class="font-label-sm text-label-sm text-on-surface-variant"
+                          >• 4 days ago</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a
+                  class="pt-space-xs text-center font-label-md text-label-md text-primary hover:text-on-primary-fixed-variant font-semibold flex items-center justify-center gap-1"
+                  href="#"
+                >
+                  View All Activity
+                  <span class="material-symbols-outlined text-[16px]"
+                    >arrow_forward</span
+                  >
+                </a>
+              </section>
+              <!-- Section: Achievements & Milestones -->
+              <section
+                class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md"
+              >
+                <div class="flex flex-col gap-space-xs">
+                  <div class="flex items-center justify-between">
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface font-bold"
+                    >
+                      Achievements &amp; Badges
+                    </h3>
+                    <span
+                      class="font-label-sm text-label-sm text-tertiary font-bold"
+                      >3 Unlocked</span
+                    >
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Celebrate accomplishments earned on your practical growth
+                    journey
+                  </p>
+                </div>
+                <!-- Achievement Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+                  <!-- Badge 1: First Steps (Unlocked) -->
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-sm relative group hover:shadow-xs transition-shadow"
+                  >
+                    <div class="flex items-start justify-between">
+                      <div
+                        class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed"
+                      >
+                        <span class="material-symbols-outlined text-[22px]"
+                          >workspace_premium</span
+                        >
+                      </div>
+                      <span
+                        class="px-2 py-0.5 rounded-full bg-on-tertiary-container/30 text-tertiary font-label-sm text-label-sm font-bold flex items-center gap-1"
+                      >
+                        <span class="material-symbols-outlined text-[14px]"
+                          >done</span
+                        >
+                        Unlocked
+                      </span>
+                    </div>
+                    <div class="flex flex-col">
+                      <h4
+                        class="font-headline-sm text-headline-sm text-on-surface font-bold"
+                      >
+                        First Steps
+                      </h4>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant mt-0.5"
+                      >
+                        Completed your very first life-skill lesson.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Badge 2: Money Smart (Unlocked) -->
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-sm relative group hover:shadow-xs transition-shadow"
+                  >
+                    <div class="flex items-start justify-between">
+                      <div
+                        class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed"
+                      >
+                        <span class="material-symbols-outlined text-[22px]"
+                          >savings</span
+                        >
+                      </div>
+                      <span
+                        class="px-2 py-0.5 rounded-full bg-on-tertiary-container/30 text-tertiary font-label-sm text-label-sm font-bold flex items-center gap-1"
+                      >
+                        <span class="material-symbols-outlined text-[14px]"
+                          >done</span
+                        >
+                        Unlocked
+                      </span>
+                    </div>
+                    <div class="flex flex-col">
+                      <h4
+                        class="font-headline-sm text-headline-sm text-on-surface font-bold"
+                      >
+                        Money Smart
+                      </h4>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant mt-0.5"
+                      >
+                        Completed a real-world financial literacy drill.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Badge 3: Consistent Learner (Unlocked) -->
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-sm relative group hover:shadow-xs transition-shadow"
+                  >
+                    <div class="flex items-start justify-between">
+                      <div
+                        class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed"
+                      >
+                        <span class="material-symbols-outlined text-[22px]"
+                          >auto_awesome</span
+                        >
+                      </div>
+                      <span
+                        class="px-2 py-0.5 rounded-full bg-on-tertiary-container/30 text-tertiary font-label-sm text-label-sm font-bold flex items-center gap-1"
+                      >
+                        <span class="material-symbols-outlined text-[14px]"
+                          >done</span
+                        >
+                        Unlocked
+                      </span>
+                    </div>
+                    <div class="flex flex-col">
+                      <h4
+                        class="font-headline-sm text-headline-sm text-on-surface font-bold"
+                      >
+                        Consistent Learner
+                      </h4>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant mt-0.5"
+                      >
+                        Studied for five consecutive active days.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Badge 4: Skill Builder (In Progress) -->
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-low/70 flex flex-col justify-between gap-space-sm relative opacity-90"
+                  >
+                    <div class="flex items-start justify-between">
+                      <div
+                        class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-outline"
+                      >
+                        <span class="material-symbols-outlined text-[22px]"
+                          >military_tech</span
+                        >
+                      </div>
+                      <span
+                        class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-bold"
+                      >
+                        8/10 Done
+                      </span>
+                    </div>
+                    <div class="flex flex-col">
+                      <h4
+                        class="font-headline-sm text-headline-sm text-on-surface font-bold"
+                      >
+                        Skill Builder
+                      </h4>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant mt-0.5"
+                      >
+                        Complete ten lessons. 2 more lessons left to unlock.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <!-- Interactive JavaScript for Date-Filter States -->
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const filterButtons =
+                document.querySelectorAll(".time-filter-btn");
+              filterButtons.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                  // Reset styles
+                  filterButtons.forEach((b) => {
+                    b.classList.remove(
+                      "bg-surface-container-lowest",
+                      "text-primary",
+                      "shadow-sm",
+                      "font-bold",
+                    );
+                    b.classList.add("text-on-surface-variant", "font-semibold");
+                  });
+                  // Set active style
+                  btn.classList.add(
+                    "bg-surface-container-lowest",
+                    "text-primary",
+                    "shadow-sm",
+                    "font-bold",
+                  );
+                  btn.classList.remove(
+                    "text-on-surface-variant",
+                    "font-semibold",
+                  );
+                });
+              });
+            });
+          </script>
+        </div>
+      </main>
+      <footer
+        class="w-full bg-surface-container-lowest py-space-md shadow-[0_-1px_8px_rgba(0,0,0,0.02)]"
+      >
+        <div
+          class="w-full px-gutter-lg flex flex-col md:flex-row items-center justify-between gap-space-sm"
+        >
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            © 2026 LifeSkills Hub. Learn It. Practise It. Live It.
+          </p>
+          <div class="flex items-center gap-space-md">
+            <a
+              class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+              href="#"
+              >Help Centre</a
+            ><a
+              class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+              href="#"
+              >Privacy Policy</a
+            ><a
+              class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+              href="#"
+              >Terms of Use</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

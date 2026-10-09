@@ -1,0 +1,1791 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_dashboard" name="shell-type" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error": "#ffffff",
+              "on-secondary-fixed": "#001453",
+              "surface-dim": "#d2d9f4",
+              "inverse-surface": "#283044",
+              "on-surface-variant": "#434655",
+              tertiary: "#006056",
+              error: "#ba1a1a",
+              "secondary-fixed": "#dde1ff",
+              "on-secondary-fixed-variant": "#173bab",
+              "on-primary-fixed-variant": "#003ea8",
+              "surface-tint": "#0053db",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#00174b",
+              "secondary-fixed-dim": "#b8c4ff",
+              "on-secondary-container": "#00217a",
+              "tertiary-container": "#007b6e",
+              "on-secondary": "#ffffff",
+              outline: "#737686",
+              "error-container": "#ffdad6",
+              "surface-variant": "#dae2fd",
+              "surface-bright": "#faf8ff",
+              "secondary-container": "#708cfd",
+              "surface-container-low": "#f2f3ff",
+              surface: "#faf8ff",
+              "outline-variant": "#c3c6d7",
+              background: "#faf8ff",
+              "on-tertiary-container": "#b1fff1",
+              "on-background": "#131b2e",
+              "on-primary-container": "#eeefff",
+              "on-tertiary-fixed-variant": "#005048",
+              "surface-container": "#eaedff",
+              "inverse-primary": "#b4c5ff",
+              "primary-fixed": "#dbe1ff",
+              "tertiary-fixed-dim": "#4fdbc8",
+              "on-tertiary-fixed": "#00201c",
+              "inverse-on-surface": "#eef0ff",
+              "on-surface": "#131b2e",
+              primary: "#004ac6",
+              "surface-container-highest": "#dae2fd",
+              "primary-fixed-dim": "#b4c5ff",
+              "surface-container-high": "#e2e7ff",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              secondary: "#3755c3",
+              "primary-container": "#2563eb",
+              "tertiary-fixed": "#71f8e4",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "gutter-lg": "2rem",
+              "space-lg": "1.5rem",
+              "space-md": "1rem",
+              "margin-lg": "3rem",
+              "space-xl": "2.5rem",
+              margin: "1rem",
+              "space-xs": "0.25rem",
+              "gutter-md": "1.5rem",
+              "margin-md": "2rem",
+              gutter: "1rem",
+              "space-sm": "0.5rem",
+            },
+            fontFamily: {
+              "label-sm": ["Plus Jakarta Sans"],
+              "label-lg": ["Plus Jakarta Sans"],
+              "display-hero-mobile": ["Plus Jakarta Sans"],
+              "headline-md": ["Plus Jakarta Sans"],
+              "body-sm": ["Inter"],
+              "display-hero": ["Plus Jakarta Sans"],
+              "headline-xl": ["Plus Jakarta Sans"],
+              "headline-lg": ["Plus Jakarta Sans"],
+              "body-md": ["Inter"],
+              "headline-lg-mobile": ["Plus Jakarta Sans"],
+              "headline-sm": ["Plus Jakarta Sans"],
+              "headline-xl-mobile": ["Plus Jakarta Sans"],
+              "label-md": ["Plus Jakarta Sans"],
+              "body-lg": ["Inter"],
+            },
+            fontSize: {
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "display-hero-mobile": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-md": [
+                "20px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "display-hero": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-xl": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-lg": [
+                "28px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-lg-mobile": [
+                "22px",
+                {
+                  lineHeight: "30px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-sm": [
+                "16px",
+                { lineHeight: "24px", fontWeight: "600" },
+              ],
+              "headline-xl-mobile": [
+                "28px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-surface font-body-md text-on-surface antialiased">
+    <aside
+      class="fixed left-0 top-0 h-full w-72 bg-surface-container-low flex flex-col z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+    >
+      <div class="px-space-lg pt-space-lg pb-space-md">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-space-sm">
+            <div
+              class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm"
+            >
+              L
+            </div>
+            <div>
+              <div
+                class="font-headline-sm text-headline-sm tracking-tight text-on-surface"
+              >
+                LifeSkills Hub
+              </div>
+              <div
+                class="font-label-sm text-label-sm uppercase tracking-wider text-primary"
+              >
+                NIGERIA
+              </div>
+            </div>
+          </div>
+          <span
+            class="px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm"
+            >v1.2</span
+          >
+        </div>
+      </div>
+      <div class="flex-1 px-space-md py-space-sm overflow-y-auto">
+        <nav
+          class="flex flex-col gap-space-xs"
+          data-active-classes="bg-primary-fixed text-on-primary-fixed-variant font-bold border-l-4 border-primary rounded-r-xl"
+        >
+          <a
+            class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="dashboard"
+            href="#"
+            ><span class="material-symbols-outlined text-xl"
+              >space_dashboard</span
+            ><span>Dashboard</span></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="learning-path"
+            href="#"
+            ><span class="material-symbols-outlined text-xl">route</span
+            ><span>Learning Path</span></a
+          ><a
+            aria-current="page"
+            class="flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-primary-fixed text-on-primary-fixed-variant font-bold border-l-4 border-primary rounded-r-xl"
+            data-path="explore-skills"
+            href="#"
+            ><span class="material-symbols-outlined text-xl">explore</span
+            ><span>Explore Skills</span></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="challenges"
+            href="#"
+            ><span class="material-symbols-outlined text-xl">trophy</span
+            ><span>Challenges</span></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="my-progress"
+            href="#"
+            ><span class="material-symbols-outlined text-xl">monitoring</span
+            ><span>My Progress</span></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="achievements"
+            href="#"
+            ><span class="material-symbols-outlined text-xl">verified</span
+            ><span>Achievements</span></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="settings"
+            href="#"
+            ><span class="material-symbols-outlined text-xl">settings</span
+            ><span>Settings</span></a
+          >
+        </nav>
+      </div>
+      <div class="p-space-md space-y-space-md">
+        <div
+          class="p-space-md rounded-xl bg-surface-container border border-surface-container-high"
+        >
+          <div class="flex items-center gap-space-sm mb-space-xs">
+            <span class="material-symbols-outlined text-tertiary"
+              >support_agent</span
+            >
+            <h4 class="font-headline-sm text-headline-sm text-on-surface">
+              Need Help?
+            </h4>
+          </div>
+          <p
+            class="font-body-sm text-body-sm text-on-surface-variant mb-space-md"
+          >
+            Connect with Nigerian mentor counselors.
+          </p>
+          <a
+            class="inline-flex items-center justify-center w-full py-space-xs px-space-sm bg-primary text-on-primary rounded-lg font-label-sm text-label-sm hover:bg-primary-container hover:text-on-primary-container transition-colors"
+            data-path="help-support"
+            href="#"
+            >Open Support</a
+          >
+        </div>
+        <a
+          class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-error hover:bg-error-container hover:text-on-error-container transition-colors"
+          data-path="logout"
+          href="#"
+          ><span class="material-symbols-outlined text-xl">logout</span
+          ><span>Log Out</span></a
+        >
+      </div>
+    </aside>
+    <div class="pl-72 flex flex-col min-h-screen">
+      <header
+        class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-gutter-md flex items-center justify-between"
+      >
+        <div class="flex items-center gap-space-lg">
+          <nav
+            class="flex items-center gap-space-sm font-label-md text-label-md"
+          >
+            <span class="text-on-surface-variant">Dashboard</span
+            ><span class="material-symbols-outlined text-base text-outline"
+              >chevron_right</span
+            ><span class="text-on-surface font-semibold">Explore Skills</span>
+          </nav>
+          <div
+            class="hidden md:flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-lg w-80"
+          >
+            <span class="material-symbols-outlined text-outline text-lg"
+              >search</span
+            ><input
+              class="bg-transparent border-0 outline-none w-full font-body-sm text-body-sm text-on-surface placeholder:text-outline"
+              placeholder="Search lessons, skills, progress..."
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="flex items-center gap-space-lg">
+          <button
+            aria-label="Notifications"
+            class="relative p-space-xs rounded-full hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface"
+            type="button"
+          >
+            <span class="material-symbols-outlined text-2xl">notifications</span
+            ><span
+              class="absolute top-1 right-1 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface"
+            ></span>
+          </button>
+          <div class="flex items-center gap-space-md">
+            <div class="text-right hidden sm:block">
+              <div class="font-label-lg text-label-lg text-on-surface">
+                Alex Johnson
+              </div>
+              <div class="font-label-sm text-label-sm text-on-surface-variant">
+                SSS Student Pathway
+              </div>
+            </div>
+            <img
+              alt="Profile"
+              class="w-8 h-8 rounded-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5ZxH_y3ZjUFY3vrrE0LngW_I6f0VblZiQo_s0DojMUT6bmP8ghU_SPM9WzapdvVVvzt_ugJkqcaztM0MJ_r8APOD3WquIRVZS_EzASNQ3qoR_JWNH1kfHAYaWguFsfFZ6pzC4bwGYW2Ec6XJksDH3BsbHZ3ZUNkC0zzbB-9GaYH08GXEx696btQ9IKXzcucCncr4FMAI4lKeHcBIS6fqSyKpXxCRgrf6VY_DlZZIlgLN0TkDdrGP-"
+            />
+          </div>
+        </div>
+      </header>
+      <main class="w-full flex-1 pt-16 bg-surface px-gutter-md pb-space-xl">
+        <div class="flex flex-col w-full space-y-space-xl">
+          <!-- Top Hero Section -->
+          <section
+            class="relative overflow-hidden rounded-xl bg-surface-container-low shadow-sm"
+          >
+            <div
+              class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg p-space-lg lg:p-space-xl items-center"
+            >
+              <div class="lg:col-span-7 space-y-space-md">
+                <div
+                  class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wider"
+                >
+                  <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                  <span
+                    >Discover &amp; Build Practical Competencies • Learn It.
+                    Practise It. Live It.</span
+                  >
+                </div>
+                <h1
+                  class="font-headline-xl text-headline-xl text-on-surface tracking-tight leading-tight"
+                >
+                  Discover Skills That Matter in Real Life.
+                </h1>
+                <p
+                  class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed"
+                >
+                  Build practical skills that help you manage money, communicate
+                  confidently, work with others, solve problems, and make better
+                  decisions every day — at school, at work, and in society.
+                </p>
+                <div
+                  class="flex flex-wrap items-center gap-space-md pt-space-xs"
+                >
+                  <a
+                    class="inline-flex items-center gap-space-sm px-space-lg py-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container shadow-sm transition-all transform active:scale-95"
+                    href="#skill-catalogue"
+                  >
+                    <span class="material-symbols-outlined text-lg"
+                      >explore</span
+                    >
+                    <span>Explore All Skills</span>
+                  </a>
+                  <a
+                    class="inline-flex items-center gap-space-sm px-space-lg py-3 rounded-lg bg-surface-container-lowest text-primary font-label-lg text-label-lg hover:bg-surface-container transition-all shadow-sm"
+                    data-path="learning-path"
+                    href="#"
+                  >
+                    <span class="material-symbols-outlined text-lg"
+                      >alt_route</span
+                    >
+                    <span>View Learning Paths</span>
+                  </a>
+                </div>
+                <div
+                  class="flex items-center gap-space-lg pt-space-sm text-on-surface-variant font-label-sm text-label-sm"
+                >
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="material-symbols-outlined text-tertiary text-base"
+                      >check_circle</span
+                    >
+                    <span>Zero Data Waste (Lightweight)</span>
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="material-symbols-outlined text-tertiary text-base"
+                      >verified</span
+                    >
+                    <span>Accredited Curriculum</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Hero Visual Card -->
+              <div class="lg:col-span-5 relative">
+                <div
+                  class="relative rounded-xl overflow-hidden shadow-md bg-surface-container-lowest"
+                >
+                  <img
+                    alt="Young Nigerian students and young adults collaborating around a laptop in a vibrant hub workspace in Lagos"
+                    class="w-full h-80 object-cover object-center"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5ZxH_y3ZjUFY3vrrE0LngW_I6f0VblZiQo_s0DojMUT6bmP8ghU_SPM9WzapdvVVvzt_ugJkqcaztM0MJ_r8APOD3WquIRVZS_EzASNQ3qoR_JWNH1kfHAYaWguFsfFZ6pzC4bwGYW2Ec6XJksDH3BsbHZ3ZUNkC0zzbB-9GaYH08GXEx696btQ9IKXzcucCncr4FMAI4lKeHcBIS6fqSyKpXxCRgrf6VY_DlZZIlgLN0TkDdrGP-"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"
+                  ></div>
+                  <div class="absolute top-space-md left-space-md">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-tertiary font-label-sm text-label-sm shadow-sm"
+                    >
+                      <span
+                        class="material-symbols-outlined text-sm"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >groups</span
+                      >
+                      Interactive Everyday Scenarios
+                    </span>
+                  </div>
+                  <div
+                    class="absolute bottom-space-md left-space-md right-space-md text-surface-container-lowest"
+                  >
+                    <div
+                      class="font-headline-sm text-headline-sm font-semibold"
+                    >
+                      Lagos Learning Cohort 04
+                    </div>
+                    <p
+                      class="font-body-sm text-body-sm text-surface-container-high opacity-90 line-clamp-1"
+                    >
+                      Simulating real trade-offs and peer negotiation in
+                      secondary &amp; tertiary contexts
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Featured Skill of the Week Card -->
+          <section class="w-full">
+            <div
+              class="rounded-xl bg-surface-container-lowest shadow-md p-space-lg lg:p-space-xl relative overflow-hidden"
+            >
+              <div
+                class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg"
+              >
+                <div class="space-y-space-sm flex-1">
+                  <div class="flex flex-wrap items-center gap-space-sm">
+                    <span
+                      class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm"
+                    >
+                      <span class="material-symbols-outlined text-sm"
+                        >stars</span
+                      >
+                      Featured Skill of the Week
+                    </span>
+                    <span
+                      class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm"
+                    >
+                      Beginner Friendly
+                    </span>
+                  </div>
+                  <h2 class="font-headline-lg text-headline-lg text-on-surface">
+                    Financial Literacy
+                  </h2>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant max-w-2xl"
+                  >
+                    Learn how to create a realistic budget, understand the
+                    difference between needs and wants, and make better everyday
+                    money decisions.
+                  </p>
+                  <div class="space-y-space-xs pt-space-xs">
+                    <div class="flex items-start gap-space-xs">
+                      <span
+                        class="material-symbols-outlined text-tertiary text-lg shrink-0 mt-0.5"
+                        >check_circle</span
+                      >
+                      <p class="font-body-sm text-body-sm text-on-surface">
+                        <strong class="font-semibold text-on-surface"
+                          >Budgeting &amp; Saving:</strong
+                        >
+                        Track weekly cashflow and establish rainy-day reserves
+                      </p>
+                    </div>
+                    <div class="flex items-start gap-space-xs">
+                      <span
+                        class="material-symbols-outlined text-tertiary text-lg shrink-0 mt-0.5"
+                        >check_circle</span
+                      >
+                      <p class="font-body-sm text-body-sm text-on-surface">
+                        <strong class="font-semibold text-on-surface"
+                          >Needs vs. Wants:</strong
+                        >
+                        Prioritize essential living and study requirements
+                        before impulse spends
+                      </p>
+                    </div>
+                    <div class="flex items-start gap-space-xs">
+                      <span
+                        class="material-symbols-outlined text-tertiary text-lg shrink-0 mt-0.5"
+                        >check_circle</span
+                      >
+                      <p class="font-body-sm text-body-sm text-on-surface">
+                        <strong class="font-semibold text-on-surface"
+                          >Smart Spending Decisions:</strong
+                        >
+                        Evaluate trade-offs with practical Nigerian market
+                        examples
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center gap-space-md pt-space-sm font-label-sm text-label-sm text-on-surface-variant"
+                  >
+                    <span class="flex items-center gap-1"
+                      ><span class="material-symbols-outlined text-sm"
+                        >menu_book</span
+                      >
+                      4 Practical Modules</span
+                    >
+                    <span
+                      class="w-1 h-1 rounded-full bg-outline-variant"
+                    ></span>
+                    <span class="flex items-center gap-1"
+                      ><span class="material-symbols-outlined text-sm"
+                        >timer</span
+                      >
+                      ~45 mins total</span
+                    >
+                    <span
+                      class="w-1 h-1 rounded-full bg-outline-variant"
+                    ></span>
+                    <span class="flex items-center gap-1 text-primary font-bold"
+                      ><span class="material-symbols-outlined text-sm"
+                        >bolt</span
+                      >
+                      +150 XP</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col sm:flex-row lg:flex-col items-stretch lg:items-end justify-center gap-space-sm shrink-0"
+                >
+                  <button
+                    class="inline-flex items-center justify-center gap-space-sm px-space-xl py-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container shadow-sm transition-all transform active:scale-95 text-center"
+                    type="button"
+                  >
+                    <span>Start Learning</span>
+                    <span class="material-symbols-outlined text-lg"
+                      >arrow_forward</span
+                    >
+                  </button>
+                  <a
+                    class="inline-flex items-center justify-center gap-space-xs py-2 px-space-md text-primary font-label-md text-label-md hover:underline text-center"
+                    href="#"
+                  >
+                    <span>View Curriculum Details</span>
+                    <span class="material-symbols-outlined text-sm"
+                      >open_in_new</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Discovery Toolbar (Skill Search & Filtering) -->
+          <section class="space-y-space-md" id="skill-catalogue">
+            <div
+              class="rounded-xl bg-surface-container-low p-space-md space-y-space-md shadow-sm"
+            >
+              <div
+                class="flex flex-col lg:flex-row gap-space-md items-center justify-between"
+              >
+                <!-- Search bar -->
+                <div class="relative w-full lg:w-96">
+                  <span
+                    class="absolute inset-y-0 left-3 flex items-center text-outline pointer-events-none"
+                  >
+                    <span class="material-symbols-outlined text-xl"
+                      >search</span
+                    >
+                  </span>
+                  <input
+                    class="w-full h-12 pl-10 pr-4 bg-surface-container-lowest text-on-surface rounded-lg font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
+                    id="skill-search-input"
+                    placeholder="Search skills or topics (e.g. Budgeting, Public Speaking)..."
+                    type="text"
+                  />
+                </div>
+                <!-- Filter controls -->
+                <div
+                  class="flex flex-wrap items-center gap-space-sm w-full lg:w-auto justify-start lg:justify-end"
+                >
+                  <div class="relative min-w-[160px]">
+                    <select
+                      class="w-full h-12 px-space-md bg-surface-container-lowest text-on-surface rounded-lg font-label-md text-label-md appearance-none focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer shadow-sm pr-9"
+                      id="category-filter"
+                    >
+                      <option value="all">All Categories</option>
+                      <option value="finance">Finance &amp; Livelihood</option>
+                      <option value="communication">Communication</option>
+                      <option value="leadership">Leadership &amp; Civic</option>
+                      <option value="critical-thinking">
+                        Cognitive Skills
+                      </option>
+                    </select>
+                    <span
+                      class="material-symbols-outlined absolute right-3 top-3.5 pointer-events-none text-outline text-lg"
+                      >expand_more</span
+                    >
+                  </div>
+                  <div class="relative min-w-[180px]">
+                    <select
+                      class="w-full h-12 px-space-md bg-surface-container-lowest text-on-surface rounded-lg font-label-md text-label-md appearance-none focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer shadow-sm pr-9"
+                      id="sort-filter"
+                    >
+                      <option value="recommended">Sort by: Recommended</option>
+                      <option value="popular">Sort by: Most Popular</option>
+                      <option value="fastest">
+                        Sort by: Quickest to Complete
+                      </option>
+                    </select>
+                    <span
+                      class="material-symbols-outlined absolute right-3 top-3.5 pointer-events-none text-outline text-lg"
+                      >swap_vert</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Level Filter pills & Counter -->
+              <div
+                class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm pt-space-xs"
+              >
+                <div
+                  class="flex flex-wrap items-center gap-space-xs"
+                  id="level-filter-container"
+                >
+                  <button
+                    class="level-tab-btn px-space-md py-1.5 rounded-full font-label-sm text-label-sm bg-primary text-on-primary shadow-sm transition-all"
+                    data-level="all"
+                    type="button"
+                  >
+                    All Levels
+                  </button>
+                  <button
+                    class="level-tab-btn px-space-md py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high transition-all"
+                    data-level="jss"
+                    type="button"
+                  >
+                    JSS Students
+                  </button>
+                  <button
+                    class="level-tab-btn px-space-md py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high transition-all"
+                    data-level="sss"
+                    type="button"
+                  >
+                    SSS Students
+                  </button>
+                  <button
+                    class="level-tab-btn px-space-md py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high transition-all"
+                    data-level="tertiary"
+                    type="button"
+                  >
+                    Tertiary
+                  </button>
+                  <button
+                    class="level-tab-btn px-space-md py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high transition-all"
+                    data-level="adults"
+                    type="button"
+                  >
+                    Adults
+                  </button>
+                </div>
+                <div
+                  class="font-label-sm text-label-sm text-on-surface-variant"
+                  id="results-counter"
+                >
+                  Showing <span class="font-bold text-on-surface">5</span> core
+                  life skill pathways
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Main Skill Category Grid ('Skills for Everyday Life') -->
+          <section class="space-y-space-lg">
+            <div>
+              <h2
+                class="font-headline-lg text-headline-lg text-on-surface tracking-tight"
+              >
+                Skills for Everyday Life
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                Choose a skill to start building abilities you can use beyond
+                the classroom.
+              </p>
+            </div>
+            <!-- Skill Cards Grid -->
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-md"
+              id="skills-grid"
+            >
+              <!-- Card 1: Financial Literacy -->
+              <article
+                class="skill-card flex flex-col justify-between rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all p-space-lg"
+                data-category="finance"
+                data-levels="all jss sss tertiary adults"
+                data-title="Financial Literacy"
+              >
+                <div class="space-y-space-md">
+                  <div class="flex items-center justify-between">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-primary"
+                    >
+                      <span
+                        class="material-symbols-outlined text-2xl"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >account_balance_wallet</span
+                      >
+                    </div>
+                    <span
+                      class="px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm"
+                    >
+                      All Levels • Popular
+                    </span>
+                  </div>
+                  <div>
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Financial Literacy
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-3"
+                    >
+                      Learn how to manage money wisely, create budgets, save
+                      consistently, and make informed financial decisions.
+                    </p>
+                  </div>
+                  <div
+                    class="rounded-lg bg-surface-container-low p-space-sm space-y-1.5"
+                  >
+                    <div
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                    >
+                      Key Outcomes:
+                    </div>
+                    <div
+                      class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary text-base"
+                        >check</span
+                      >
+                      <span>Budgeting and saving</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary text-base"
+                        >check</span
+                      >
+                      <span>Needs versus wants</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary text-base"
+                        >check</span
+                      >
+                      <span>Smart spending decisions</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="pt-space-md mt-space-md flex items-center justify-between"
+                >
+                  <div
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                  >
+                    4 Modules • 12 Practical Drills
+                  </div>
+                  <button
+                    class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors"
+                    type="button"
+                  >
+                    <span>Explore Skill</span>
+                    <span class="material-symbols-outlined text-base"
+                      >arrow_forward</span
+                    >
+                  </button>
+                </div>
+              </article>
+              <!-- Card 2: Communication Skills -->
+              <article
+                class="skill-card flex flex-col justify-between rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all p-space-lg"
+                data-category="communication"
+                data-levels="jss sss tertiary"
+                data-title="Communication Skills"
+              >
+                <div class="space-y-space-md">
+                  <div class="flex items-center justify-between">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-primary"
+                    >
+                      <span
+                        class="material-symbols-outlined text-2xl"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >forum</span
+                      >
+                    </div>
+                    <span
+                      class="px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm"
+                    >
+                      JSS, SSS &amp; Tertiary
+                    </span>
+                  </div>
+                  <div>
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Communication Skills
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-3"
+                    >
+                      Learn to express your ideas clearly, listen actively, and
+                      communicate effectively with different people.
+                    </p>
+                  </div>
+                  <div
+                    class="rounded-lg bg-surface-container-low p-space-sm space-y-1.5"
+                  >
+                    <div
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                    >
+                      Key Outcomes:
+                    </div>
+                    <div
+                      class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary text-base"
+                        >check</span
+                      >
+                      <span>Active listening</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary text-base"
+                        >check</span
+                      >
+                      <span>Clear and respectful communication</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary text-base"
+                        >check</span
+                      >
+                      <span>Handling disagreements</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="pt-space-md mt-space-md flex items-center justify-between"
+                >
+                  <div
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                  >
+                    4 Modules • 8 Drills
+                  </div>
+                  <button
+                    class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors"
+                    type="button"
+                  >
+                    <span>Explore Skill</span>
+                    <span class="material-symbols-outlined text-base"
+                      >arrow_forward</span
+                    >
+                  </button>
+                </div>
+              </article>
+              <!-- Card 3: Public Speaking -->
+              <article
+                class="skill-card flex flex-col justify-between rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all p-space-lg"
+                data-category="communication"
+                data-levels="sss tertiary"
+                data-title="Public Speaking"
+              >
+                <div class="space-y-space-md">
+                  <div class="flex items-center justify-between">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-primary"
+                    >
+                      <span
+                        class="material-symbols-outlined text-2xl"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >record_voice_over</span
+                      >
+                    </div>
+                    <span
+                      class="px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm"
+                    >
+                      SSS &amp; Tertiary
+                    </span>
+                  </div>
+                  <div>
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Public Speaking
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-3"
+                    >
+                      Build confidence when presenting ideas, speaking in
+                      groups, and addressing an audience without stage fear.
+                    </p>
+                  </div>
+                  <div
+                    class="rounded-lg bg-surface-container-low p-space-sm space-y-1.5"
+                  >
+                    <div
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                    >
+                      Key Outcomes:
+                    </div>
+                    <div
+                      class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary text-base"
+                        >check</span
+                      >
+                      <span>Speaking with confidence</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary text-base"
+                        >check</span
+                      >
+                      <span>Organising a short presentation</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary text-base"
+                        >check</span
+                      >
+                      <span>Managing nervousness</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="pt-space-md mt-space-md flex items-center justify-between"
+                >
+                  <div
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                  >
+                    4 Modules • 6 Audio Simulations
+                  </div>
+                  <button
+                    class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors"
+                    type="button"
+                  >
+                    <span>Explore Skill</span>
+                    <span class="material-symbols-outlined text-base"
+                      >arrow_forward</span
+                    >
+                  </button>
+                </div>
+              </article>
+              <!-- Card 4: Leadership and Teamwork -->
+              <article
+                class="skill-card flex flex-col justify-between rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all p-space-lg"
+                data-category="leadership"
+                data-levels="sss tertiary adults"
+                data-title="Leadership and Teamwork"
+              >
+                <div class="space-y-space-md">
+                  <div class="flex items-center justify-between">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-primary"
+                    >
+                      <span
+                        class="material-symbols-outlined text-2xl"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >groups_2</span
+                      >
+                    </div>
+                    <span
+                      class="px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm"
+                    >
+                      SSS, Tertiary &amp; Adults
+                    </span>
+                  </div>
+                  <div>
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Leadership and Teamwork
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-3"
+                    >
+                      Learn to collaborate, take responsibility, resolve team
+                      challenges, and support shared goals effectively.
+                    </p>
+                  </div>
+                  <div
+                    class="rounded-lg bg-surface-container-low p-space-sm space-y-1.5"
+                  >
+                    <div
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                    >
+                      Key Outcomes:
+                    </div>
+                    <div
+                      class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary text-base"
+                        >check</span
+                      >
+                      <span>Collaboration and empathy</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary text-base"
+                        >check</span
+                      >
+                      <span>Leadership and responsibility</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary text-base"
+                        >check</span
+                      >
+                      <span>Conflict resolution in teams</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="pt-space-md mt-space-md flex items-center justify-between"
+                >
+                  <div
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                  >
+                    4 Modules • Real-world scenarios
+                  </div>
+                  <button
+                    class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors"
+                    type="button"
+                  >
+                    <span>Explore Skill</span>
+                    <span class="material-symbols-outlined text-base"
+                      >arrow_forward</span
+                    >
+                  </button>
+                </div>
+              </article>
+              <!-- Card 5: Critical Thinking and Decision-Making -->
+              <article
+                class="skill-card flex flex-col justify-between rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all p-space-lg"
+                data-category="critical-thinking"
+                data-levels="all jss sss tertiary adults"
+                data-title="Critical Thinking and Decision-Making"
+              >
+                <div class="space-y-space-md">
+                  <div class="flex items-center justify-between">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-primary"
+                    >
+                      <span
+                        class="material-symbols-outlined text-2xl"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >psychology</span
+                      >
+                    </div>
+                    <span
+                      class="px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm"
+                    >
+                      All Levels
+                    </span>
+                  </div>
+                  <div>
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Critical Thinking and Decision-Making
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-3"
+                    >
+                      Develop the ability to analyse information, solve
+                      problems, compare options, and make thoughtful decisions.
+                    </p>
+                  </div>
+                  <div
+                    class="rounded-lg bg-surface-container-low p-space-sm space-y-1.5"
+                  >
+                    <div
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                    >
+                      Key Outcomes:
+                    </div>
+                    <div
+                      class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary text-base"
+                        >check</span
+                      >
+                      <span>Problem-solving frameworks</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary text-base"
+                        >check</span
+                      >
+                      <span>Evaluating online &amp; social info</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary text-base"
+                        >check</span
+                      >
+                      <span>Making informed decisions</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="pt-space-md mt-space-md flex items-center justify-between"
+                >
+                  <div
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                  >
+                    4 Modules • Case studies
+                  </div>
+                  <button
+                    class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors"
+                    type="button"
+                  >
+                    <span>Explore Skill</span>
+                    <span class="material-symbols-outlined text-base"
+                      >arrow_forward</span
+                    >
+                  </button>
+                </div>
+              </article>
+              <!-- Empty state when no cards match filters -->
+              <div
+                class="hidden col-span-full py-space-xl text-center space-y-space-sm bg-surface-container-low rounded-xl"
+                id="no-results"
+              >
+                <span class="material-symbols-outlined text-4xl text-outline"
+                  >search_off</span
+                >
+                <h4 class="font-headline-sm text-headline-sm text-on-surface">
+                  No matching life skills found
+                </h4>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mx-auto"
+                >
+                  Try clearing your search query or switching your level filter
+                  to view all available pathways.
+                </p>
+                <button
+                  class="mt-space-sm px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all"
+                  id="reset-filters-btn"
+                  type="button"
+                >
+                  Reset All Filters
+                </button>
+              </div>
+            </div>
+          </section>
+          <!-- How Skill Learning Works: From Learning to Real-Life Practice -->
+          <section
+            class="rounded-xl bg-surface-container-low p-space-lg lg:p-space-xl space-y-space-lg shadow-sm"
+          >
+            <div class="text-center max-w-2xl mx-auto space-y-space-xs">
+              <span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold"
+                >The Hub Pedagogical Journey</span
+              >
+              <h2
+                class="font-headline-lg text-headline-lg text-on-surface tracking-tight"
+              >
+                From Learning to Real-Life Practice
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Every track is designed with three connected pillars to ensure
+                you actually apply knowledge in everyday Nigerian life.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-md">
+              <!-- Step 1 -->
+              <div
+                class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-sm relative"
+              >
+                <div class="flex items-center justify-between">
+                  <div
+                    class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-bold"
+                  >
+                    1
+                  </div>
+                  <span class="material-symbols-outlined text-primary text-2xl"
+                    >explore</span
+                  >
+                </div>
+                <h3
+                  class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                >
+                  Explore
+                </h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Choose a skill that matches your interests, school level, and
+                  future aspirations.
+                </p>
+              </div>
+              <!-- Step 2 -->
+              <div
+                class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-sm relative"
+              >
+                <div class="flex items-center justify-between">
+                  <div
+                    class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-headline-sm text-headline-sm font-bold"
+                  >
+                    2
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-secondary text-2xl"
+                    >menu_book</span
+                  >
+                </div>
+                <h3
+                  class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                >
+                  Learn
+                </h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Work through short, bite-sized lessons with clear everyday
+                  Nigerian examples.
+                </p>
+              </div>
+              <!-- Step 3 -->
+              <div
+                class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-sm relative"
+              >
+                <div class="flex items-center justify-between">
+                  <div
+                    class="w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-headline-sm text-headline-sm font-bold"
+                  >
+                    3
+                  </div>
+                  <span class="material-symbols-outlined text-tertiary text-2xl"
+                    >sports_gymnastics</span
+                  >
+                </div>
+                <h3
+                  class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                >
+                  Practise
+                </h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Apply what you learn through hands-on challenges and scenario
+                  simulations.
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- Skills You Can Start With (Recommended Starter Drills) -->
+          <section class="space-y-space-md">
+            <div class="flex items-center justify-between">
+              <div>
+                <h2
+                  class="font-headline-lg text-headline-lg text-on-surface tracking-tight"
+                >
+                  Skills You Can Start With
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Quick interactive drills that require less than 15 minutes of
+                  your day.
+                </p>
+              </div>
+              <a
+                class="hidden sm:inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:underline"
+                href="#"
+              >
+                <span>View all 24 drills</span>
+                <span class="material-symbols-outlined text-sm"
+                  >chevron_right</span
+                >
+              </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-md">
+              <!-- Starter Card 1 -->
+              <div
+                class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-space-md"
+              >
+                <div class="space-y-space-xs">
+                  <div
+                    class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"
+                  >
+                    <span
+                      class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed"
+                      >Financial Literacy</span
+                    >
+                    <span class="flex items-center gap-1"
+                      ><span class="material-symbols-outlined text-xs"
+                        >schedule</span
+                      >
+                      10 min</span
+                    >
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface font-semibold pt-1"
+                  >
+                    Budgeting Basics
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Create a simple ₦10,000 weekly budget and divide funds
+                    between needs and emergency savings.
+                  </p>
+                </div>
+                <div class="pt-space-xs flex items-center justify-between">
+                  <span
+                    class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-1"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >file_upload_off</span
+                    >
+                    Beginner
+                  </span>
+                  <button
+                    class="px-space-md py-1.5 rounded-lg bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-all font-label-sm text-label-sm"
+                    type="button"
+                  >
+                    View Skill
+                  </button>
+                </div>
+              </div>
+              <!-- Starter Card 2 -->
+              <div
+                class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-space-md"
+              >
+                <div class="space-y-space-xs">
+                  <div
+                    class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"
+                  >
+                    <span
+                      class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed"
+                      >Communication</span
+                    >
+                    <span class="flex items-center gap-1"
+                      ><span class="material-symbols-outlined text-xs"
+                        >schedule</span
+                      >
+                      8 min</span
+                    >
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface font-semibold pt-1"
+                  >
+                    Communicating with Confidence
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Practise active listening techniques and asserting your
+                    viewpoints respectfully.
+                  </p>
+                </div>
+                <div class="pt-space-xs flex items-center justify-between">
+                  <span
+                    class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-1"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >signal_cellular_alt</span
+                    >
+                    All Levels
+                  </span>
+                  <button
+                    class="px-space-md py-1.5 rounded-lg bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-all font-label-sm text-label-sm"
+                    type="button"
+                  >
+                    View Skill
+                  </button>
+                </div>
+              </div>
+              <!-- Starter Card 3 -->
+              <div
+                class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-space-md"
+              >
+                <div class="space-y-space-xs">
+                  <div
+                    class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"
+                  >
+                    <span
+                      class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed"
+                      >Critical Thinking</span
+                    >
+                    <span class="flex items-center gap-1"
+                      ><span class="material-symbols-outlined text-xs"
+                        >schedule</span
+                      >
+                      12 min</span
+                    >
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface font-semibold pt-1"
+                  >
+                    Making Better Decisions
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Compare choices methodically and understand long-term
+                    trade-offs in student life.
+                  </p>
+                </div>
+                <div class="pt-space-xs flex items-center justify-between">
+                  <span
+                    class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >chrome_extension_off</span
+                    >
+                    Intermediate
+                  </span>
+                  <button
+                    class="px-space-md py-1.5 rounded-lg bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-all font-label-sm text-label-sm"
+                    type="button"
+                  >
+                    View Skill
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Visual Cohort Mosaic & Real Context Spotlight -->
+          <section
+            class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center"
+            >
+              <div class="lg:col-span-6 space-y-space-sm">
+                <span
+                  class="px-space-sm py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm inline-flex items-center gap-1"
+                >
+                  <span class="material-symbols-outlined text-sm">hub</span>
+                  Peer Learning Communities
+                </span>
+                <h3
+                  class="font-headline-lg text-headline-lg text-on-surface tracking-tight"
+                >
+                  Practise With Peers Across Nigerian States
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Connect in localized discussion pods where SSS candidates,
+                  university undergraduates, and young entrepreneurs break down
+                  scenarios: from preparing your first CV to handling room-mate
+                  agreements and rent splits.
+                </p>
+                <div class="grid grid-cols-2 gap-space-md pt-space-xs">
+                  <div class="p-space-sm rounded-lg bg-surface-container-low">
+                    <div
+                      class="font-headline-md text-headline-md font-bold text-primary"
+                    >
+                      14,200+
+                    </div>
+                    <div
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                    >
+                      Active Weekly Drills
+                    </div>
+                  </div>
+                  <div class="p-space-sm rounded-lg bg-surface-container-low">
+                    <div
+                      class="font-headline-md text-headline-md font-bold text-tertiary"
+                    >
+                      36 States + FCT
+                    </div>
+                    <div
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                    >
+                      Nationwide Reach
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-6 grid grid-cols-2 gap-space-sm">
+                <div class="rounded-xl overflow-hidden shadow-sm h-48">
+                  <img
+                    class="w-full h-full object-cover"
+                    data-alt="Young Nigerian woman student with braided hair smiling brightly while taking notes on a notepad next to a laptop in a library in Abuja, bright daylight, authentic realistic educational setting."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzEOY89F9ZaLftb0npcoSRorNK-j5FDZYTzJz8lTG-Y5auaitAoJCucl1W5zEfa2uqgA0j7evDu2e7jIV_c-qBUWsGjoAxCXCWAZfqeQxwQIZuTiVvAnqvGEXHnCDI1ua2Buj6gKnvuauOCWu7q51RlGXKt5BB_oxtTxA37-wKzrppI-JD4An0HsFzr5k0OfU9J1e0XiHZRv_oCKIptBpEJZLJIMvjBBFKcmVgwQik1nMa5L6fYFjv"
+                  />
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-sm h-48">
+                  <img
+                    class="w-full h-full object-cover"
+                    data-alt="Two Nigerian male high school students in casual hoodies reviewing digital course certificates on a tablet device, laughing together in a modern collaborative tech space, warm interior lighting."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuTiQ8rbyOs9MTDZ6A0WtEfdn71dHyNoX_oZJSJREaVXVFwm9eZ2w8PtcC0fgcyZLhDxCqZvzsIDu5JC50l0-_YI8_HB9upX583EQQsveV1tAVMabcfLQiaR8PenWcYQxcWW5Aa6bf4jGoRkT5oBeVJScK4tyqky-zOIGrpYYEKACy7khX12mBvpL1zzKM9_-463vjV4BbyaIaQK4jiTf5lQV_dsIz1OFYRc2DBwEfiFLBiA0W5-vs"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Call-to-Action Encouragement Section -->
+          <section
+            class="rounded-xl bg-surface-container-low p-space-lg lg:p-space-xl shadow-sm text-center relative overflow-hidden"
+          >
+            <div class="max-w-2xl mx-auto space-y-space-md relative z-10">
+              <div
+                class="w-12 h-12 rounded-full bg-primary-fixed mx-auto flex items-center justify-center text-primary"
+              >
+                <span
+                  class="material-symbols-outlined text-2xl"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >emoji_events</span
+                >
+              </div>
+              <div class="space-y-space-xs">
+                <h2
+                  class="font-headline-xl text-headline-xl text-on-surface tracking-tight"
+                >
+                  Small Steps. Valuable Skills. Better Decisions.
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Start with one skill today and build habits that will serve
+                  you in school, work, business, and everyday life.
+                </p>
+              </div>
+              <div
+                class="flex flex-wrap items-center justify-center gap-space-md pt-space-xs"
+              >
+                <a
+                  class="inline-flex items-center gap-space-sm px-space-xl py-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container shadow-sm transition-all transform active:scale-95"
+                  href="#skill-catalogue"
+                >
+                  <span>Choose a Skill</span>
+                  <span class="material-symbols-outlined text-lg"
+                    >arrow_forward</span
+                  >
+                </a>
+                <a
+                  class="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-lg bg-surface-container-lowest text-primary font-label-lg text-label-lg hover:bg-surface-container transition-all shadow-sm"
+                  data-path="help-support"
+                  href="#"
+                >
+                  <span class="material-symbols-outlined text-lg"
+                    >person_pin</span
+                  >
+                  <span>Talk to a Mentor</span>
+                </a>
+              </div>
+            </div>
+          </section>
+          <!-- Interactive JavaScript logic for discovery filter/search -->
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const searchInput = document.getElementById("skill-search-input");
+              const categoryFilter = document.getElementById("category-filter");
+              const sortFilter = document.getElementById("sort-filter");
+              const levelButtons = document.querySelectorAll(".level-tab-btn");
+              const skillCards = document.querySelectorAll(".skill-card");
+              const counterElement = document.getElementById("results-counter");
+              const noResults = document.getElementById("no-results");
+              const resetBtn = document.getElementById("reset-filters-btn");
+
+              let currentLevel = "all";
+
+              function applyFilters() {
+                const query = (searchInput ? searchInput.value : "")
+                  .toLowerCase()
+                  .trim();
+                const selectedCategory = categoryFilter
+                  ? categoryFilter.value
+                  : "all";
+                let visibleCount = 0;
+
+                skillCards.forEach((card) => {
+                  const title = (
+                    card.getAttribute("data-title") || ""
+                  ).toLowerCase();
+                  const category = card.getAttribute("data-category") || "";
+                  const levels = (card.getAttribute("data-levels") || "").split(
+                    " ",
+                  );
+
+                  const matchesQuery = !query || title.includes(query);
+                  const matchesCategory =
+                    selectedCategory === "all" || category === selectedCategory;
+                  const matchesLevel =
+                    currentLevel === "all" || levels.includes(currentLevel);
+
+                  if (matchesQuery && matchesCategory && matchesLevel) {
+                    card.classList.remove("hidden");
+                    visibleCount++;
+                  } else {
+                    card.classList.add("hidden");
+                  }
+                });
+
+                if (counterElement) {
+                  counterElement.innerHTML = `Showing <span class="font-bold text-on-surface">${visibleCount}</span> core life skill pathways`;
+                }
+
+                if (noResults) {
+                  if (visibleCount === 0) {
+                    noResults.classList.remove("hidden");
+                  } else {
+                    noResults.classList.add("hidden");
+                  }
+                }
+              }
+
+              if (levelButtons) {
+                levelButtons.forEach((btn) => {
+                  btn.addEventListener("click", function () {
+                    levelButtons.forEach((b) => {
+                      b.classList.remove("bg-primary", "text-on-primary");
+                      b.classList.add(
+                        "bg-surface-container-lowest",
+                        "text-on-surface-variant",
+                      );
+                    });
+                    this.classList.remove(
+                      "bg-surface-container-lowest",
+                      "text-on-surface-variant",
+                    );
+                    this.classList.add("bg-primary", "text-on-primary");
+                    currentLevel = this.getAttribute("data-level");
+                    applyFilters();
+                  });
+                });
+              }
+
+              if (searchInput) {
+                searchInput.addEventListener("input", applyFilters);
+              }
+
+              if (categoryFilter) {
+                categoryFilter.addEventListener("change", applyFilters);
+              }
+
+              if (resetBtn) {
+                resetBtn.addEventListener("click", function () {
+                  if (searchInput) searchInput.value = "";
+                  if (categoryFilter) categoryFilter.value = "all";
+                  currentLevel = "all";
+                  levelButtons.forEach((b) => {
+                    if (b.getAttribute("data-level") === "all") {
+                      b.classList.add("bg-primary", "text-on-primary");
+                      b.classList.remove(
+                        "bg-surface-container-lowest",
+                        "text-on-surface-variant",
+                      );
+                    } else {
+                      b.classList.remove("bg-primary", "text-on-primary");
+                      b.classList.add(
+                        "bg-surface-container-lowest",
+                        "text-on-surface-variant",
+                      );
+                    }
+                  });
+                  applyFilters();
+                });
+              }
+            });
+          </script>
+        </div>
+      </main>
+      <footer class="w-full bg-surface-container-low py-space-md px-gutter-md">
+        <div
+          class="flex flex-col sm:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-on-surface-variant"
+        >
+          <div>
+            © 2026 LifeSkills Hub Nigeria. Learn It. Practise It. Live It.
+          </div>
+          <div
+            class="flex items-center gap-space-lg font-label-sm text-label-sm"
+          >
+            <a
+              class="hover:text-on-surface transition-colors"
+              data-path="privacy-policy"
+              href="#"
+              >Privacy Policy</a
+            ><a
+              class="hover:text-on-surface transition-colors"
+              data-path="terms-of-service"
+              href="#"
+              >Terms of Service</a
+            ><a
+              class="hover:text-on-surface transition-colors"
+              data-path="civic-charter"
+              href="#"
+              >Civic Charter</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
